@@ -42,6 +42,11 @@ public class MyLinkedList <K> {
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+	public INode pop () {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
 	/**
 	 * Print my node when I appending the node
 	 * then it will be adding to front node
