@@ -47,6 +47,15 @@ public class MyLinkedList <K> {
 		this.head = head.getNext();
 		return tempNode;
 	}
+	public INode popLast() {
+		INode tempNode = head;
+		while(!tempNode.getNext().equals(tail)) {
+			tempNode = tempNode.getNext();
+		}
+		this.tail= tempNode;
+		tempNode = tempNode.getNext();
+		return tempNode;
+	}
 	/**
 	 * Print my node when I appending the node
 	 * then it will be adding to front node
