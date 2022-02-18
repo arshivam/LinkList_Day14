@@ -26,8 +26,22 @@ public class MyLinkedList <K> {
             this.head.setNext(tempNode);
         }
     }
+    public void append(INode myNode) {
+    	  if (this.head==null){
+              this.head=myNode;
+          }
+          if (this.tail==null){
+              this.tail=myNode;
+          } else {
+        	  this.tail.setNext(myNode);
+        	  this.tail=myNode;
+          }
+    }
+    
 
-    /**
+ 
+
+	/**
      * Print my node when I appending the node
      * then it will be adding to front node
      */
