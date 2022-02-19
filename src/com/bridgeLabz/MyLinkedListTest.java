@@ -116,4 +116,23 @@ class MyLinkedListTest {
 				 myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
+	@Test
+	public void givenSearchnumber40InLinkedListShouldBeDeleted() {
+		System.out.println("\nSearch number 40 and delete it");
+		MyNode<Integer> myFirstNode= new MyNode<>(56);
+		MyNode<Integer> mySecondNode= new MyNode<>(30);
+		MyNode<Integer> myThirdNode= new MyNode<>(70);
+		MyNode<Integer> myFourthNode= new MyNode<>(40);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.insert(myFirstNode, mySecondNode);
+		myLinkedList.searchThenDelete(myFourthNode);
+		myLinkedList.printMyNode();
+		System.out.println("Size of linked list: " +myLinkedList.size());
+		boolean result = myLinkedList.head.equals(myFirstNode) &&
+				 myLinkedList.head.getNext().equals(mySecondNode) &&
+				 myLinkedList.tail.equals(myThirdNode);
+		Assert.assertTrue(result);	
+	}
 }

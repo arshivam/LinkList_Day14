@@ -79,7 +79,30 @@ public class MyLinkedList <K> {
 			tempNode = tempNode.getNext();
 		}
 	}
+
+	public void searchThenDelete(INode deleteNode) {
+		MyLinkedList linkedList = new MyLinkedList();
+		INode tempNode = head;
+		boolean inserted = false;
+		while(tempNode.getNext() != null) {
+			if(tempNode.getKey() == deleteNode.getKey()) {
+				linkedList.pop();
+			}
+			tempNode = tempNode.getNext();
+		}
+	}
 	
+
+	public int size() {
+		INode tempNode = head;
+		int count = 1;
+		while(tempNode.getNext() != null) {
+			count++;
+			tempNode = tempNode.getNext();
+		}
+		return count;
+	}
+
 	public void printMyNode(){
 		StringBuffer myNodes=new StringBuffer("My Nodes :");
 		INode tempNode=head;
