@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 class MyLinkedListTest {
 	@Test
 	void given3NumbersWhenAddedToLinkedList_ShouldBeAddedToTop(){
+		System.out.println("Added to Top");
 		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode= new MyNode<>(30);
 		MyNode<Integer> myThirdNode= new MyNode<>(56);
@@ -21,6 +22,7 @@ class MyLinkedListTest {
 	}
 	@Test
 	void given3NumbersAppend_ShouldBeAddedToLast(){
+		System.out.println("Added to last");
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode= new MyNode<>(30);
 		MyNode<Integer> myThirdNode= new MyNode<>(70);
@@ -36,6 +38,7 @@ class MyLinkedListTest {
 	}
 	@Test
 	void givenNumbersWhenInsert_ShouldPassLinkListResult(){
+		System.out.println("\nInsert in between");
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode= new MyNode<>(30);
 		MyNode<Integer> myThirdNode= new MyNode<>(70);
@@ -51,6 +54,7 @@ class MyLinkedListTest {
 	}
 	@Test
 	void givenNumbersWhenDeleted_ShouldPassLinkListResult(){
+		System.out.println("\nDeleted first number");
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode= new MyNode<>(30);
 		MyNode<Integer> myThirdNode= new MyNode<>(70);
@@ -66,17 +70,18 @@ class MyLinkedListTest {
 	}
 	@Test
 	void givenNumbersWhenDeletedFromLast_ShouldPassLinkListResult(){
+		System.out.println("\nDeleted Last number");
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode= new MyNode<>(30);
 		MyNode<Integer> myThirdNode= new MyNode<>(70);
 		MyLinkedList myLinkedList= new MyLinkedList();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.append(mySecondNode);
 		myLinkedList.append(myThirdNode);
+		myLinkedList.insert(myFirstNode, mySecondNode);
 		myLinkedList.popLast();
 		myLinkedList.printMyNode();
-		boolean result=myLinkedList.head.equals(myFirstNode) &&
-				       myLinkedList.tail.equals(mySecondNode);
+		boolean result = myLinkedList.head.equals(myFirstNode) &&
+						 myLinkedList.head.getNext().equals(mySecondNode);
 		Assert.assertTrue(result);
 	}
 }

@@ -52,16 +52,16 @@ public class MyLinkedList <K> {
 		while(!tempNode.getNext().equals(tail)) {
 			tempNode = tempNode.getNext();
 		}
-		this.tail= tempNode;
-		tempNode = tempNode.getNext();
+		this.tail = tempNode;
+		tempNode.setNext(null);
 		return tempNode;
-	}
+		}
 	/**
 	 * Print my node when I appending the node
 	 * then it will be adding to front node
 	 */
 	public void printMyNode(){
-		StringBuffer myNodes=new StringBuffer("My Nodes");
+		StringBuffer myNodes=new StringBuffer("My Nodes :");
 		INode tempNode=head;
 		while (tempNode.getNext()!=null){
 			myNodes.append(tempNode.getKey());
