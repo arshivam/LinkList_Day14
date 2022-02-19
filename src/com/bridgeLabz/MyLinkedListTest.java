@@ -135,4 +135,16 @@ class MyLinkedListTest {
 				 myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);	
 	}
+	@Test
+	public void givenShouldReturn() {
+		System.out.println("\nOrdered Linked List");
+		OrderedLinkedList<Integer> linkedList = new OrderedLinkedList<>();
+		linkedList.add(56);
+		linkedList.add(30);
+		linkedList.add(70);
+		linkedList.add(40);
+		linkedList.printMyNodes();
+		int head =linkedList.head.data;
+			Assert.assertEquals(30, head);
+	}
 }
