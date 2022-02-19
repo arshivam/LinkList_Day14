@@ -98,4 +98,22 @@ class MyLinkedListTest {
 		boolean result = myLinkedList.search(mySecondNode);
 		Assert.assertTrue(result);
 	}
+	@Test
+	public void given3NumberSearch30InLinkedListShouldBeInserted40After30() {
+		System.out.println("\nSearch number 30 and add 40 after it");
+		MyNode<Integer> myFirstNode= new MyNode<>(56);
+		MyNode<Integer> mySecondNode= new MyNode<>(30);
+		MyNode<Integer> myThirdNode= new MyNode<>(70);
+		MyNode<Integer> myFourthNode= new MyNode<>(40);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.insert(myFirstNode, mySecondNode);
+		myLinkedList.searchThenInsert(mySecondNode, myFourthNode);
+		myLinkedList.printMyNode();
+		boolean result = myLinkedList.head.equals(myFirstNode) &&
+				 myLinkedList.head.getNext().equals(mySecondNode) &&
+				 myLinkedList.tail.equals(myThirdNode);
+		Assert.assertTrue(result);
+	}
 }
