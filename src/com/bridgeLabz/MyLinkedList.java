@@ -8,11 +8,7 @@ public class MyLinkedList <K> {
 		this.head=null;
 		this.tail=null;
 	}
-
-	/**
-	 * Adding New node to existing node logic
-	 * @param newNode
-	 */
+	
 	public void add(INode newNode) {
 
 		if (this.tail==null){
@@ -26,6 +22,7 @@ public class MyLinkedList <K> {
 			this.head.setNext(tempNode);
 		}
 	}
+	
 	public void append(INode myNode) {
 		if (this.head==null){
 			this.head=myNode;
@@ -37,6 +34,7 @@ public class MyLinkedList <K> {
 			this.tail=myNode;
 		}
 	}
+	
 	public void insert (INode myNode, INode newNode) {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
@@ -47,6 +45,7 @@ public class MyLinkedList <K> {
 		this.head = head.getNext();
 		return tempNode;
 	}
+	
 	public INode popLast() {
 		INode tempNode = head;
 		while(!tempNode.getNext().equals(tail)) {
@@ -55,11 +54,20 @@ public class MyLinkedList <K> {
 		this.tail = tempNode;
 		tempNode.setNext(null);
 		return tempNode;
+	}
+	
+	public boolean search(INode node) {
+		INode tempNode = head;
+		boolean found = false;
+		while(tempNode.getNext() != null) {
+			if(tempNode.getKey() == node.getKey()) {
+				found = true;
+			}
+			tempNode = tempNode.getNext();
 		}
-	/**
-	 * Print my node when I appending the node
-	 * then it will be adding to front node
-	 */
+		return found;
+	}
+
 	public void printMyNode(){
 		StringBuffer myNodes=new StringBuffer("My Nodes :");
 		INode tempNode=head;
